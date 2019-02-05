@@ -1,5 +1,21 @@
 *
 
 !.gitignore
+!browser--open-application-url.sh
+!docker-compose--compose--create.sh
+!docker-compose--compose--down.sh
+!docker-compose--compose--up.sh
+!docker-compose--container--kill.sh
+!docker-compose--container--restart.sh
+!docker-compose--container--start.sh
+!docker-compose--container--stop.sh
+!docker-compose--image--build.sh
+!docker-compose--image--rebuild.sh
+!docker-compose--log--container-info.sh
+!docker-compose--log--container-log.sh
+!docker-compose--system--clean.sh
+!docker-compose--system--prune.sh
+!docker-compose--volumes--wipe-local.sh
+!git--pull-and-update-submodules.sh
 !LICENCE
 !README.md
