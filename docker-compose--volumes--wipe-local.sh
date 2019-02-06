@@ -10,13 +10,19 @@ function wipe_local_volumes() {
     echo -E "Wiping local volumes ..."
 
     local VAR_ARE_THERE_ANY_VOLUMES="false"
-    local VAR_HOST_PATH_TO_VOLUMES=${1}
 
-    if [ -d ${VAR_HOST_PATH_TO_VOLUMES} ];
+    if [ -z ${HOST_PATH_TO_VOLUMES_ROOT} ];
     then
-        for VAR_NAME_OF_VOLUME in $( ls --almost-all ${VAR_HOST_PATH_TO_VOLUMES}/volumes/ )
+        echo -E " * volumes root environment HOST_PATH_TO_VOLUMES_ROOT is not defined."
+        echo -e "Wiping local volumes ... $( __skipped )"
+        return
+    fi
+
+    if [ -d ${HOST_PATH_TO_VOLUMES_ROOT} ];
+    then
+        for VAR_NAME_OF_VOLUME in $( ls --almost-all ${HOST_PATH_TO_VOLUMES_ROOT}/ )
         do
-            local VAR_PATH_TO_VOLUME=${VAR_HOST_PATH_TO_VOLUMES}/volumes/${VAR_NAME_OF_VOLUME}/
+            local VAR_PATH_TO_VOLUME=${HOST_PATH_TO_VOLUMES_ROOT}/${VAR_NAME_OF_VOLUME}/
             if [ ! -d ${VAR_PATH_TO_VOLUME} ];
             then
                 continue
@@ -42,4 +48,4 @@ function wipe_local_volumes() {
     fi
 }
 
-wipe_local_volumes ${@}
+wipe_local_volumes
