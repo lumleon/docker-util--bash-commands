@@ -10,6 +10,7 @@
 !docker-compose--container--start.sh
 !docker-compose--container--stop.sh
 !docker-compose--image--build.sh
+!docker-compose--image--pull.sh
 !docker-compose--image--rebuild.sh
 !docker-compose--log--container-info.sh
 !docker-compose--log--container-log.sh
