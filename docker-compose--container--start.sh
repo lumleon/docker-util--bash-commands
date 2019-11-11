@@ -8,7 +8,7 @@ prepare_local_environment ${@}
 
 echo -E "Starting containers ..."
 
-docker-compose --file ${HOST_PATH_TO_DOCKER_COMPOSE_FILE} \
+docker-compose --compatibility --file ${HOST_PATH_TO_DOCKER_COMPOSE_FILE} \
                start
 
 echo -e "Starting containers ... $( __done )"

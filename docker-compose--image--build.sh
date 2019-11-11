@@ -8,7 +8,7 @@ prepare_local_environment ${@}
 
 echo -E "Building docker images ..."
 
-docker-compose --file ${HOST_PATH_TO_DOCKER_COMPOSE_FILE} \
+docker-compose --compatibility --file ${HOST_PATH_TO_DOCKER_COMPOSE_FILE} \
                build
 
 echo -e "Building docker images ... $( __done )"

@@ -8,7 +8,7 @@ prepare_local_environment ${@}
 
 echo -E "Stopping and removing containers and networks ..."
 
-docker-compose --file ${HOST_PATH_TO_DOCKER_COMPOSE_FILE} \
+docker-compose --compatibility --file ${HOST_PATH_TO_DOCKER_COMPOSE_FILE} \
                down
 
 echo -e "Stopping and removing containers and networks ... $( __done )"
